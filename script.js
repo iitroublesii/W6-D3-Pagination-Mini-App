@@ -10,9 +10,66 @@ const nextBtn = document.getElementById("nextBtn");
 //Current Page
 let currentPage = 1;
 
+// Clear page
+function clearResults() {
+  while (results.firstChild) {
+    results.removeChild(results.firstChild);
+  }
+}
+
 //Loading
 function showLoading() {
   statusMsg.textContent = "Loading...";
+}
+
+//Error message
+function showError(message) {
+  statusMsg.textContent = message;
+}
+
+// Render characters
+function renderCharacters(characters) {
+  clearResults();
+
+  for (let i = 0; i < characters.length && i < 6; i++) {
+    const char = characters[i];
+
+// Container 
+    const card = document.createElement("div");
+    card.className =
+      "bg-[#8F2D56] p-4 rounded shadow";
+
+// Image
+    const img = document.createElement("img");
+    img.src = char.image;
+    img.alt = char.name;
+    img.className = "w-full rounded-lg border border-[#3A1772] mb-2";
+
+// Text 
+    const textContainer = document.createElement("div");
+    textContainer.className = "space-y-1";
+
+    const name = document.createElement("p");
+    name.textContent = "Name: " + char.name;
+
+    const status = document.createElement("p");
+    status.textContent = "Status: " + char.status;
+
+    const species = document.createElement("p");
+    species.textContent = "Species: " + char.species;
+
+    // Adding text to container
+    textContainer.appendChild(name);
+    textContainer.appendChild(status);
+    textContainer.appendChild(species);
+
+    // Adding image and text to card
+    card.appendChild(img);
+    card.appendChild(textContainer);
+
+    // Adding card to results
+    results.appendChild(card);
+  }
 }
 
 //Updated page info
