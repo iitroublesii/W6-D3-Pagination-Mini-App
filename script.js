@@ -31,7 +31,7 @@ function showError(message) {
 function renderCharacters(characters) {
   clearResults();
 
-  for (let i = 0; i < characters.length && i < 6; i++) {
+  for (let i = 0; i < characters.length && i <9; i++) {
     const char = characters[i];
 
 // Container 
