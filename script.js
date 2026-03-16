@@ -36,14 +36,13 @@ function renderCharacters(characters) {
 
 // Container 
     const card = document.createElement("div");
-    card.className =
-      "bg-[#8F2D56] p-4 rounded shadow";
+    card.className = "bg-[#D19C1D] p-4 rounded shadow";
 
 // Image
     const img = document.createElement("img");
     img.src = char.image;
     img.alt = char.name;
-    img.className = "w-full rounded-lg border border-[#3A1772] mb-2";
+    img.className = "w-full rounded-lg border border-[#472C1B] mb-2";
 
 // Text 
     const textContainer = document.createElement("div");
@@ -58,10 +57,18 @@ function renderCharacters(characters) {
     const species = document.createElement("p");
     species.textContent = "Species: " + char.species;
 
-    // Adding text to container
+     const gender = document.createElement("p");
+     gender.textContent = "Gender: " + char.gender;
+
+       const type = document.createElement("p");
+       type.textContent = "Type: " + char.type;
+
+// Adding text to container
     textContainer.appendChild(name);
     textContainer.appendChild(status);
     textContainer.appendChild(species);
+    textContainer.appendChild(gender);
+    textContainer.appendChild(type);
 
     // Adding image and text to card
     card.appendChild(img);
