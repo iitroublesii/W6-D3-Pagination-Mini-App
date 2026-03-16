@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Pagination Mini App</title>
+
+</head>
+
+<body class="bg-[#D7F75B] p-6">
+
+
+    <h1 class="text-[#472C1B] text-3xl font-bold mb-4 text-center">
+        Rick and Morty Characters
+    </h1>
+
+    <div class="flex justify-center gap-4 mb-4">
+
+        <button id="prevBtn" class="bg-[#D19C1D] text-white px-4 py-2 rounded">
+            Prev
+        </button>
+
+        <span id="pageInfo">Page 1</span>
+
+        <button id="nextBtn" class="bg-[#D19C1D] text-white px-4 py-2 rounded">
+            Next
+        </button>
+
+    </div>
+
+    <p id="status"></p>
+    
+    <div id="results"></div>
+
+
+    <footer>...</footer>
+</body>
+
+</html>
